@@ -1,0 +1,102 @@
+.container {
+   width: 100%;
+   height: 100%;
+}
+
+.container_header {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   margin-top: 10%;
+}
+
+.container_header span {
+   color: #1eb2a6;
+   font-size: 18px;
+}
+
+.container_header h1 {
+   font-size: 40px;
+   font-family: serif;
+}
+
+.container_items {
+   width: 70%;
+   margin: 2% auto;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   gap: 20px;
+}
+
+.container_items_box {
+   box-shadow: 0px 0px 7px #1eb2a6;
+   width: 100%;
+   height: 350px;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 5px;
+}
+
+@media (max-width:700px){
+
+   .container{
+      margin-top: 20%;
+   }
+   .container_header span{
+      font-size: 18px;
+   }
+
+   .container_header h1{
+      font-size: 25px;
+   }
+
+   .container_items{
+      grid-template-columns: auto;
+      width: 90%;
+      margin: 8% auto;
+   }
+
+   .container_items_box h1{
+      font-size: 20px;
+   }
+}
+
+
+/*Laptops 1024 x 600 - 770*/
+@media (min-width: 1024px) and (max-width: 1440px) and (min-height: 760px) and (max-height: 900px) {
+   .container_header h1{
+      font-size: 30px;
+      font-family: serif;
+   }
+   .container_items{
+      width: 95%;
+   }
+}
+
+
+
+/*Laptops/desktops 1680 - 1920 x 1050 - 1200*/
+@media (min-width: 1680px) and (max-width: 1920px) and (min-height: 1050px) and (max-height: 1200px) {
+   .container_header h1{
+      font-size: 30px;
+      font-family: serif;
+   }
+   .container_items{
+      width: 95%;
+   }
+}
+
+
+/*Laptops/desktops 2560 - 5120  x 1440 - 2880 */
+@media (min-width: 2560px) and (max-width: 5120px) and (min-height: 1440px) and (max-height: 2880px) {
+   .container_header h1{
+      font-size: 2.3em;
+      font-family: serif;
+   }
+   .container_items{
+      width: 95%;
+   }
+}

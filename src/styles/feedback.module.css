@@ -1,0 +1,109 @@
+.container {
+   width: 100%;
+   height: 100%;
+}
+
+.container_header {
+   margin-top: 2%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+}
+
+.container_header span {
+   color: #1eb2a6;
+   font-size: 20px;
+   text-transform: uppercase;
+   font-family: 'metropolis';
+   font-weight: 600;
+}
+
+.container_header h1 {
+   font-size: 40px;
+   font-family: 'metropolis';
+   color: #000;
+   margin-top: 1%;
+}
+
+.container_items {
+   display: grid;
+   width: 70%;
+   margin: 2.5% auto;
+}
+
+.container_items form{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+
+.container_items form .field{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 3%;
+}
+
+.container_items form .field input {
+   width: 300px;
+   height: 40px;
+   border: 1px solid #000;
+   border-radius: 20px;
+}
+
+.container_items form .field:nth-child(2) input:nth-child(2){
+   height: 140px;
+   width: 400px;
+}
+
+.container_button{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.container_button button{
+   background-color: #1eb2a6;
+   color: #fff;
+   width: 150px;
+   height: 45px;
+   border: none;
+   border-radius: 20px;
+}
+
+
+@media (max-width:700px){
+   .container_header h1 {
+      font-size: 17px;
+      font-family: 'metropolis';
+      color: #000;
+      margin-top: 1%;
+      text-align: center;
+   }
+
+   .container_header span {
+      color: #1eb2a6;
+      font-size: 15px;
+      margin-top: 10px;
+   }
+
+   
+   .container_items{
+      width: 100%;
+   }
+
+   .container_items form .field input {
+      width: 300px;
+      height: 40px;
+      border: 1px solid #000;
+      border-radius: 10px;
+   }
+   
+   .container_items form .field:nth-child(2) input:nth-child(2){
+      height: 140px;
+      width: 200px;
+   }
+}

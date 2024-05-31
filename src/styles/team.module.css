@@ -1,0 +1,64 @@
+.container {
+   width: 100%;
+   height: 100%;
+   margin-bottom: 10%;
+}
+
+.container_header {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.container_items_container {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   gap: 10px;
+   width: 70%;
+   margin: 5% auto;
+}
+
+.container_items_container .container_item {
+   width: 100%;
+   height: 100%;
+}
+
+.image {
+   width: 100%;
+   height: 100%;
+   border-radius: 20px;
+}
+
+.container_description {
+   display: flex;
+   justify-content: center;
+   align-items: flex-start;
+   flex-direction: column;
+}
+
+.container_description h1 {
+   font-size: 23px;
+   font-family: 'metropolis';
+   margin-top: 10px;
+}
+
+.container_description span {
+   font-size: 20px;
+   font-family: Helvetica, ;
+}
+
+.container_description p {
+   font-weight: 600;
+   margin-top: 5px;
+}
+
+@media (max-width:700px) {
+   .container_items_container {
+      width: 90%;
+      grid-template-columns: auto;
+   }
+
+   .container_item {
+      margin-bottom: 20%;
+   }
+}
