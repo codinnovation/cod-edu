@@ -34,7 +34,7 @@ function Index() {
       const newBookingRef = push(ref(db, "bookSession"), newBooking);
       const newBookingKey = newBookingRef.key;
       toast.success("Booking submitted successfully!");
-      
+
       router.push("/comps/");
       return newBookingKey;
     } catch (error) {
@@ -57,13 +57,13 @@ function Index() {
     switch (course) {
       case "HTML Basics":
       case "CSS Basics":
-        basePrice = 40;
+        basePrice = 35;
         break;
       case "JavaScript Fundamentals":
-        basePrice = 50;
+        basePrice = 45;
         break;
       case "Python Fundamentals":
-        basePrice = 50;
+        basePrice = 45;
         break;
       default:
         basePrice = 0;
@@ -179,9 +179,7 @@ function Index() {
                       </option>
                       <option value="HTML Basics">HTML Basics</option>
                       <option value="CSS Basics">CSS Basics</option>
-                      <option value="Frontend Web Development">
-                        Frontend Web Development - Beginners
-                      </option>
+                      
                     </select>
                   </div>
                   <div className={styles.field}>
