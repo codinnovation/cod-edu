@@ -16,6 +16,10 @@ export default function Home({ user }) {
     const url = `whatsapp://send?phone=${phoneNumber}`;
     window.location.href = url;
   };
+
+  function bookSession() {
+    router.push("/comps/book-session");
+  }
   return (
     <>
       <Head>
@@ -50,7 +54,7 @@ export default function Home({ user }) {
                 learn web development and software development skills to create
                 dynamic web applications?
               </h1>
-              <button onClick={goToWhatsApp}>Chat with us</button>
+              <button onClick={bookSession}>Book Session</button>
             </div>
           </div>
         </>
