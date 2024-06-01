@@ -26,7 +26,7 @@ function Index() {
           <div className={styles.containerItems}>
             <div className={styles.containerIntroduction}>
               <p>
-                Welcome to our Face-to-Face Learning Booking page! We're excited
+                Welcome to our Face-to-Face Learning Booking page! We are excited
                 to offer personalized instruction to supplement our online
                 courses. Our expert instructors are ready to guide you through
                 your IT and programming journey.
