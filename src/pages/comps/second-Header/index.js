@@ -47,8 +47,8 @@ function Index() {
               All Courses
             </Link>
 
-            <Link href="/" className={styles.link}>
-              About
+            <Link href="/comps/book-session" className={styles.link}>
+              Book Lesson
             </Link>
 
             <Link href="/comps/feedback" className={styles.link}>
@@ -85,8 +85,8 @@ function Index() {
                 All Courses
               </Link>
 
-              <Link href="/" className={styles.link}>
-                About
+              <Link href="/comps/book-session" className={styles.link}>
+                Book Session 
               </Link>
 
               <Link href="/comps/feedback" className={styles.link}>

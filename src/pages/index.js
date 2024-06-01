@@ -59,24 +59,24 @@ export default function Home({ user }) {
   );
 }
 
-// export const getServerSideProps = withSession(async function ({ req, res }) {
-//   const user = req.session.get("user");
-//   if (!user) {
-//     return {
-//       redirect: {
-//         destination: "/comps/login",
-//         permanent: false,
-//       },
-//     };
-//   }
+export const getServerSideProps = withSession(async function ({ req, res }) {
+  const user = req.session.get("user");
+  if (!user) {
+    return {
+      redirect: {
+        destination: "/comps/login",
+        permanent: false,
+      },
+    };
+  }
 
-//   if (user) {
-//     req.session.set("user", user);
-//     await req.session.save();
-//   }
-//   return {
-//     props: {
-//       user: user,
-//     },
-//   };
-// });
+  if (user) {
+    req.session.set("user", user);
+    await req.session.save();
+  }
+  return {
+    props: {
+      user: user,
+    },
+  };
+});
