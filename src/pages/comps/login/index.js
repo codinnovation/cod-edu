@@ -9,7 +9,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../../api/firebase";
-
+import Box from "@mui/material/Box";
+import LinearProgress from "@mui/material/LinearProgress";
 
 function Index() {
   const [showPassword, setShowPassword] = useState(false);
@@ -49,9 +50,9 @@ function Index() {
       });
 
       if (response.ok) {
-         toast.success("Login successful");
+        toast.success("Login successful");
         setIsButtonClicked(false);
-        router.push("/")
+        router.push("/");
       } else {
         toast.error("Login Failed");
         setIsButtonClicked(false);
@@ -64,27 +65,26 @@ function Index() {
     }
   };
 
-  
   const resetPassword = async () => {
-   if(!email){
-      toast.error("Please enter your email address")
-   }
-   try {
-     await sendPasswordResetEmail(auth, email);
-     toast.success("Password reset email sent. Please check your email.");
-   } catch (error) {
-     toast.error("Error sending password reset email");
-   }
- };
-
+    if (!email) {
+      toast.error("Please enter your email address");
+    }
+    try {
+      await sendPasswordResetEmail(auth, email);
+      toast.success("Password reset email sent. Please check your email.");
+    } catch (error) {
+      toast.error("Error sending password reset email");
+    }
+  };
 
   return (
     <>
       {isButtonClicked && (
         <>
           <div className={styles.circle_container}>
-            <div className={styles.circle}></div>
-            <span>Please wait...</span>
+            <Box sx={{ width: "60%" }}>
+              <LinearProgress />
+            </Box>
           </div>
         </>
       )}
@@ -137,7 +137,9 @@ function Index() {
               </div>
 
               <div className={styles.container_forget_password}>
-                <Link href="/comps/login/acc_create" className={styles.link}>Create account</Link>
+                <Link href="/comps/login/acc_create" className={styles.link}>
+                  Create account
+                </Link>
                 <a onClick={resetPassword}>Forget Password</a>
               </div>
 

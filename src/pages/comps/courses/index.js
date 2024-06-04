@@ -9,6 +9,8 @@ import { ref, get } from "firebase/database";
 import { auth, db } from "@/pages/api/firebase";
 import withSession from "@/lib/session";
 import Head from "next/head";
+import Box from "@mui/material/Box";
+import LinearProgress from "@mui/material/LinearProgress";
 
 function Index() {
   const [isVisible, setIsVisible] = useState(false);
@@ -18,12 +20,10 @@ function Index() {
 
   const router = useRouter();
 
-  useEffect(()=>{
-
-  })
+  useEffect(() => {});
 
   useEffect(() => {
-    setIsLoading(true)
+    setIsLoading(true);
     const fetchData = async () => {
       try {
         const dbRef = ref(db, "courses");
@@ -41,7 +41,7 @@ function Index() {
           setCourseData([]);
         }
       } catch (error) {
-        toast.error("Error fetching Courses")
+        toast.error("Error fetching Courses");
         console.error("Error fetching data:");
         setCourseData([]);
       }
@@ -78,10 +78,10 @@ function Index() {
     };
   }, []);
 
-  function goToCourse(courseData){
+  function goToCourse(courseData) {
     router.push({
       pathname: "/comps/learn-page",
-      query: {courseData: JSON.stringify(courseData)},
+      query: { courseData: JSON.stringify(courseData) },
     });
   }
 
@@ -90,14 +90,15 @@ function Index() {
       {isLoading && (
         <>
           <div className={styles.circle_container}>
-            <div className={styles.circle}></div>
-            <span>Loading...</span>
+            <Box sx={{ width: "60%" }}>
+              <LinearProgress />
+            </Box>
           </div>
         </>
       )}
-    <Head>
-      <title>Browse all courses</title>
-    </Head>
+      <Head>
+        <title>Browse all courses</title>
+      </Head>
       <Layout>
         <div className={styles.container}>
           <div className={styles.container_header}>
@@ -123,7 +124,7 @@ function Index() {
                 </div>
 
                 <div className={styles.container_items_box_button}>
-                  <button onClick={()=> goToCourse(course)}>
+                  <button onClick={() => goToCourse(course)}>
                     Enroll Now!
                   </button>
                 </div>
@@ -132,7 +133,7 @@ function Index() {
           </div>
         </div>
       </Layout>
-      <ToastContainer/>
+      <ToastContainer />
     </>
   );
 }
