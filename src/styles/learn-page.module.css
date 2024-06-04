@@ -3,6 +3,16 @@
    height: 100%;
 }
 
+.backToCourseContainer{
+   margin: 1%;
+}
+
+.backToCourseContainer h1{
+   font-size: 23px;
+   font-family: serif;
+   cursor: pointer;
+}
+
 .container_header {
    display: flex;
    justify-content: center;

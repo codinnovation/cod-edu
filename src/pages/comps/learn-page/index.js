@@ -7,16 +7,16 @@ import Head from "next/head";
 function Index() {
   const [courseInfo, setCourseInfo] = useState({});
   const [selectedCourse, setSelectedCourse] = useState(null);
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
   const { courseData } = router.query;
   const parsedCourseData = courseData ? JSON.parse(courseData) : null;
 
   useEffect(() => {
-    setIsLoading(true)
+    setIsLoading(true);
     if (parsedCourseData) {
       setCourseInfo(parsedCourseData);
-      setIsLoading(false)
+      setIsLoading(false);
     }
   }, []);
 
@@ -34,10 +34,13 @@ function Index() {
           </div>
         </>
       )}
-    <Head>
-      <title>{courseInfo?.CourseTitle}</title>
-    </Head>
+      <Head>
+        <title>{courseInfo?.CourseTitle}</title>
+      </Head>
       <div className={styles.container}>
+        <div className={styles.backToCourseContainer}>
+          <h1>Back To Course</h1>
+        </div>
         <div className={styles.container_header}>
           <h1>{`Welcome ${courseInfo?.CourseTitle}`}</h1>
         </div>
@@ -61,7 +64,10 @@ function Index() {
                 <iframe
                   width="424"
                   height="540"
-                  src={`${courseInfo?.SubCourses[selectedCourse]?.courseVideo || "Loading..."}`}
+                  src={`${
+                    courseInfo?.SubCourses[selectedCourse]?.courseVideo ||
+                    "Loading..."
+                  }`}
                   frameborder="0"
                   allow="accelerometer; clipboard-write; encrypted-media; gyroscope; web-share"
                   referrerpolicy="strict-origin-when-cross-origin"
