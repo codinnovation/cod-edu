@@ -3,6 +3,8 @@ import styles from "./../../../styles/learn-page.module.css";
 import { useRouter } from "next/router";
 import withSession from "@/lib/session";
 import Head from "next/head";
+import Box from "@mui/material/Box";
+import LinearProgress from "@mui/material/LinearProgress";
 
 function Index() {
   const [courseInfo, setCourseInfo] = useState({});
@@ -21,7 +23,11 @@ function Index() {
   }, []);
 
   const handleCourseClick = (courseKey) => {
+    setIsLoading(true);
     setSelectedCourse(courseKey);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
   };
 
   return (
@@ -29,8 +35,9 @@ function Index() {
       {isLoading && (
         <>
           <div className={styles.circle_container}>
-            <div className={styles.circle}></div>
-            <span>Loading...</span>
+            <Box sx={{ width: "60%" }}>
+              <LinearProgress />
+            </Box>
           </div>
         </>
       )}
@@ -39,7 +46,7 @@ function Index() {
       </Head>
       <div className={styles.container}>
         <div className={styles.backToCourseContainer}>
-          <h1>Back To Course</h1>
+          <h1 onClick={() => router.push("/comps/courses")}>Back To Course</h1>
         </div>
         <div className={styles.container_header}>
           <h1>{`Welcome ${courseInfo?.CourseTitle}`}</h1>
