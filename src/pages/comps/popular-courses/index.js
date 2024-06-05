@@ -82,7 +82,7 @@ function Index() {
         </div>
         {isVisible && (
           <div className={styles.container_items}>
-            {courseData.slice(1, 4).map((course) => (
+            {courseData.slice(0, 3).map((course) => (
               <div
                 className={`${styles.container_items_box} ${
                   responsiveIsVisible
