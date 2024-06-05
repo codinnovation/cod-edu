@@ -43,6 +43,7 @@ function Index() {
       )}
       <Head>
         <title>{courseInfo?.CourseTitle}</title>
+        <link rel="icon" href="/lg2.png" />
       </Head>
       <div className={styles.container}>
         <div className={styles.backToCourseContainer}>
