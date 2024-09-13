@@ -15,14 +15,17 @@
     "@mui/material": "^5.15.15",
     "dotenv": "^16.4.5",
     "firebase": "^10.11.1",
+    "framer-motion": "^11.5.4",
     "next": "14.2.3",
     "next-iron-session": "^4.2.0",
     "react": "^18",
     "react-doc-viewer": "^0.1.5",
     "react-dom": "^18",
+    "react-lottie": "^1.2.4",
     "react-notifications": "^1.7.4",
     "react-player": "^2.16.0",
-    "react-toastify": "^10.0.5"
+    "react-toastify": "^10.0.5",
+    "sharp": "^0.33.5"
   },
   "devDependencies": {
     "eslint": "^8",
