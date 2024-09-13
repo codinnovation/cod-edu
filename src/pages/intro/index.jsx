@@ -9,7 +9,7 @@ const starArray = [...Array(150)].map((_, i) => (
 		style={{
 			top: `${Math.random() * 100}vh`,
 			left: `${Math.random() * 100}vw`,
-			animationDuration: `${Math.random() * 40 + 40}s`
+			animationDuration: `${Math.random() * 10 + 40}s`
 		}}
 	></div>
 ));
