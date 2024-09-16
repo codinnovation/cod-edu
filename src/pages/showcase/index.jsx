@@ -1,68 +1,83 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from '../../styles/showcase.module.css';
-import ShowcaseImage from '../../../public/showcase-img.jpg';
+import ShowcaseImage from '../../../public/Andela-001.webp';
 import { motion } from 'framer-motion';
 
+const textAnimation = {
+  hidden: { opacity: 0, x: -50 },
+  visible: { opacity: 1, x: 0 },
+  transition: { duration: 0.6, ease: "easeOut" }
+};
+
+const textAnimationRight = {
+  hidden: { opacity: 0, x: 50 },
+  visible: { opacity: 1, x: 0 },
+  transition: { duration: 0.6, ease: "easeOut" }
+};
+
+const showcaseTextArray = [
+  { head_1: "Join Our Community of", head_2: "Innovators", descriptions: "Dive into a transformative learning experience where coding meets innovation. Our platform is designed to empower you with the skills and confidence needed to excel in the world of programming", buttonText: "Find More Information" },
+
+  { head_1: "Mentorship and", head_2: "Guidance", descriptions: "We believe in the power of personalized learning. Our mission is to provide you with top-tier educational resources, expert mentorship, and real-world experience to help you master coding and achieve your career goals", buttonText: "Find More Information" },
+];
+
 function Showcase() {
-	return (
-		<>
-			<div className={styles.showcaseContainer}>
-				<motion.div
-					className={styles.showcaseImage}
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{ delay: 1, duration: 1.5 }}
-				>
-					<Image src={ShowcaseImage} width={900} height={900} className={styles.image} alt='showcase-image' />
-				</motion.div>
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-				{/* Text animations start after the image fully appears (3 + 1.5 = 4.5 seconds delay) */}
-				<motion.div
-					className={styles.showcaseTextContainer}
-					initial={{ y: 100, opacity: 0 }}
-					animate={{ y: 0, opacity: 1 }}
-					transition={{ delay: 2, duration: 1, ease: 'easeInOut' }}
-				>
-					<div className={styles.showcaseText}>
-						<motion.p
-							initial={{ x: -100, opacity: 0 }}
-							animate={{ x: 0, opacity: 1 }}
-							transition={{ delay: 2, duration: 1 }}
-						>
-							Welcome to COD E-learning
-						</motion.p>
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex(prevIndex => (prevIndex + 1) % showcaseTextArray.length);
+    }, 4000); // 3 seconds
 
-						<motion.h1
-							initial={{ x: 100, opacity: 0 }}
-							animate={{ x: 0, opacity: 1 }}
-							transition={{ delay: 3, duration: 1 }}
-						>
-							Gain the skills you need to excel in the
-						</motion.h1>
+    return () => clearInterval(interval); // Cleanup on component unmount
+  }, []);
 
-						<motion.h1
-							initial={{ x: 100, opacity: 0 }}
-							animate={{ x: 0, opacity: 1 }}
-							transition={{ delay: 3.5, duration: 1 }}
-						>
-							world of programming
-						</motion.h1>
+  return (
+    <div className={styles.showcaseContainer}>
+      <div className={styles.showcaseContent}>
+        <div className={styles.showcaseTextContainer}>
+          {showcaseTextArray.map((text, index) => (
+            <motion.div
+              key={index}
+              className={styles.showcaseText}
+              initial="hidden"
+              animate={currentIndex === index ? "visible" : "hidden"}
+              variants={textAnimation}
+              transition={{ ...textAnimation.transition, delay: 0 }} // No stagger delay
+            >
+              <motion.div
+                className={styles.showcaseTextHeader}
+                initial="hidden"
+                animate={currentIndex === index ? "visible" : "hidden"}
+                variants={textAnimation}
+              >
+                <h1>{text.head_1}</h1>
+                <h1>{text.head_2}</h1>
+              </motion.div>
 
-						<motion.div
-							className={styles.showcaseButton}
-							initial={{ scale: 0 }}
-							animate={{ scale: 1 }}
-							transition={{ delay: 4, duration: 0.5 }}
-						>
-							<button>Contact Us</button>
-							<button>Courses</button>
-						</motion.div>
-					</div>
-				</motion.div>
-			</div>
-		</>
-	);
+              <motion.div
+                className={styles.showcaseTextDescription}
+                initial="hidden"
+                animate={currentIndex === index ? "visible" : "hidden"}
+                variants={textAnimationRight}
+              >
+                <p>{text.descriptions}</p>
+              </motion.div>
+
+              <div className={styles.showcaseTextButton}>
+                <button>{text.buttonText}</button>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className={styles.showcaseImageContainer}>
+          <Image src={ShowcaseImage} width={1000} height={1000} alt='showcase-image' />
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Showcase;

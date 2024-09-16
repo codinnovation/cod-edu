@@ -4,6 +4,7 @@ import styles from "@/styles/Home.module.css";
 import { motion } from "framer-motion";
 import FirstHeader from "../pages/first-Header";
 import Showcase from "./showcase";
+import Courses from "./popular-courses";
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
       <div>
         <FirstHeader />
         <Showcase/>
-
+        <Courses/>
       </div>
     </>
   );
