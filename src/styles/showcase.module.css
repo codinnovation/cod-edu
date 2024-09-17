@@ -1,135 +1,283 @@
 .showcaseContainer {
+  height: 100vh;
   width: 100%;
-  height: auto;
+}
+
+.showcaseBgImage {
+  background-image: url("/showcase-image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(30%);
+  height: 100%;
+  width: 100%;
 }
 
 .showcaseContent {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  height: 100%;
-}
-
-.showcaseTextContainer {
-  background-color: #008374;
-  height: 100%;
+  position: absolute;
+  top: 0;
   width: 100%;
 }
 
-.showcaseText {
-  width: 35%;
-  height: auto;
-  background-color: #fff;
-  position: absolute;
-  top: 30%;
-  left: 14%;
-  padding: 25px;
-  border-right: 40px solid #008374;
-  z-index: 700;
+.firstHeader {
+  width: 70%;
+  margin: 15px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-.showcaseTextHeader {
+.leftSideItems {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.leftSideItems .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  margin-right: 30px;
+}
+
+.leftSideItems .item .icon {
+  font-size: 1.1em;
+  margin-right: 4px;
+}
+
+.leftSideItems .item h1 {
+  font-size: 0.8em;
+  font-weight: 100;
+  font-family: sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.rightSide {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.rightSide .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  margin-left: 30px;
+}
+
+.rightSide .item .icon {
+  font-size: 1.1em;
+  margin-right: 4px;
+}
+
+.rightSide .item h1 {
+  font-size: 0.8em;
+  font-weight: 100;
+  font-family: sans-serif;
+  letter-spacing: 0.7px;
+}
+
+.navigationContainer {
+  width: 70%;
+  margin: 3% auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.nameContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.nameContainer h1 {
+  font-size: 1.65em;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+.nameContainer h1:nth-child(2) {
+  color: #ff3d1d;
+}
+
+.linkContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.linkContainer a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: #979797;
+  font-size: 1em;
+  font-family: sans-serif;
+}
+
+.linkContainer a:hover {
+  color: #fff;
+}
+
+.navigationButton {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navigationButton button {
+  width: 120px;
+  height: 50px;
+  border: none;
+  background-color: #008374;
+  color: #fff;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+
+.showcaseTextContainer {
+  width: 70%;
+  height: 63vh;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.showcaseText {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  width: 80%;
-  margin: 0 auto;
+}
+
+.showcaseTextHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 30px;
 }
 
 .showcaseTextHeader h1 {
-  font-family: serif;
-  font-size: 2.2em;
-  font-weight: 100;
+  font-size: 3.5em;
+  font-family: sans-serif;
+  color: #fff;
 }
 
 .showcaseTextHeader h1:nth-child(2) {
-  color: #008374;
-  font-weight: 700;
+  color: #ff3d1d;
 }
 
 .showcaseTextDescription {
-  width: 80%;
-  margin: 11% auto;
+  width: 70%;
 }
 
 .showcaseTextDescription p {
-  font-size: 1.5em;
-  font-weight: 100;
-  color: #686565;
+  font-size: 1.1em;
+  color: #d8d7d7;
+  letter-spacing: 0.3px;
+  font-family: sans-serif;
 }
 
 .showcaseTextButton {
-  width: 80%;
-  margin: 5% auto;
+  margin-top: 50px;
 }
 
 .showcaseTextButton button {
-  width: 220px;
-  height: 60px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding-left: 10px;
   background-color: #008374;
   color: #fff;
-  font-size: 1.1em;
+  width: 150px;
+  height: 50px;
   border: none;
   cursor: pointer;
 }
 
-.showcaseImageContainer {
-  background-color: #f2f2f2;
+.showcaseTextPlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.showcaseImageContainer img {
-  width: 100%;
-  height: auto;
+.showcaseTextPlay .icon {
+  font-size: 6em;
+  background-color: #008374;
+  padding: 10px;
+  border-radius: 50%;
+  color: #fff;
+  border: none;
+  cursor: pointer;
 }
 
 @media (max-width: 700px) {
-  .showcaseContent {
-    grid-template-columns: 1fr;
+  .showcaseContainer {
+    width: 100%;
   }
-  .showcaseText {
+  .firstHeader {
     width: 90%;
-    margin: 0 auto;
-    height: auto;
-    top: 40%;
-    left: 5%;
-    padding: 10px;
-    border-right: 20px solid #008374;
-    z-index: 600;
+  }
+
+  .nameContainer h1 {
+    font-size: 1.3em;
+    color: #fff;
+    font-family: sans-serif;
+  }  
+
+  .navigationButton button {
+    width: 100px;
+    height: 40px;
+    font-size: 0.8em;
+  }
+
+  .leftSideItems .item {
+    margin-right: 20px;
+  }
+
+  .leftSideItems .item h1 {
+    display: none;
+  }
+
+  .rightSide {
+    justify-content: center;
+  }
+
+  .navigationContainer {
+    width: 90%;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .linkContainer {
+    display: none;
+  }
+
+  .showcaseTextContainer {
+    grid-template-columns: 1fr;
+    width: 90%;
+    height:70vh;
   }
 
   .showcaseTextHeader {
-    width: 90%;
-    margin: 0 auto;
+    margin-bottom: 10px;
   }
 
   .showcaseTextHeader h1 {
+    font-size: 1.6em;
     font-family: sans-serif;
-    font-size: 1.2em;
+    color: #fff;
   }
 
   .showcaseTextDescription {
-    width: 90%;
-    margin: 11% auto;
+    width: 100%;
   }
 
   .showcaseTextDescription p {
-    font-size: 1.05em;
+    font-size: 0.95em;
+    color: #d8d7d7;
+    letter-spacing: 0.3px;
+    font-family: sans-serif;
   }
 
-  .showcaseTextButton {
-    width: 90%;
-    margin: 5% auto;
-  }
-
-  .showcaseTextButton button {
-    width: auto;
-    height: 50px;
-    padding: 10px;
-    padding-left: 5px;
-    font-size: 1em;
+  .showcaseTextPlay {
+    display: none;
   }
 }

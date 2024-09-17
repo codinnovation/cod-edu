@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import styles from "@/styles/intro.module.css";
 import { motion } from 'framer-motion';
 
@@ -21,6 +22,7 @@ const texts = [
 ];
 
 function Intro() {
+	const router = useRouter();
 	const [currentText, setCurrentText] = useState(0);
 	const [displayedText, setDisplayedText] = useState("");
 	const [charIndex, setCharIndex] = useState(0);
@@ -45,8 +47,7 @@ function Intro() {
 	}, [charIndex, currentText]);
 
 	const handleSkip = () => {
-		// Logic to handle skipping (e.g., navigate to another page)
-		console.log("Skip clicked");
+		router.push("/home")
 	};
 
 	return (

@@ -1,12 +1,15 @@
 import Head from "next/head";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import styles from "@/styles/Home.module.css";
-import { motion } from "framer-motion";
-import FirstHeader from "../pages/first-Header";
-import Showcase from "./showcase";
-import Courses from "./popular-courses";
+import Showcase from "./home";
+import Intro from "./intro";
 
 export default function Home() {
+  const router = useRouter();
+  useEffect(() => {
+router
+  })
   return (
     <>
       <Head>
@@ -16,9 +19,7 @@ export default function Home() {
         <link rel="icon" href="/lg2.png" />
       </Head>
       <div>
-        <FirstHeader />
-        <Showcase/>
-        <Courses/>
+        <Intro/>
       </div>
     </>
   );
