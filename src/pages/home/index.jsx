@@ -3,6 +3,8 @@ import Showcase from './showcase'
 import WhyChooseUs from './why-choose-us';
 import ExploreOurCourese from './explore-our-courses';
 import GetStartedToday from './get-started-today';
+import JoinOurCommunity from './join-our-community';
+import Footer from './footer';
 
 function Index() {
   return (
@@ -12,6 +14,8 @@ function Index() {
         <WhyChooseUs />
         <ExploreOurCourese />
         <GetStartedToday />
+        <JoinOurCommunity/>
+        <Footer/>
       </div>
     </>
   );

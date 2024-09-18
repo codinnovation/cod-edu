@@ -31,7 +31,7 @@
 }
 
 .getStartedDescriptionHeader h1{
-	font-size: 1.5em;
+	font-size: 1.4em;
 	font-family: sans-serif;
 }
 
@@ -41,7 +41,7 @@
 
 .getStartedP p{
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-	font-size: 1.1em;
+	font-size: 1em;
 	color: #000;
 	font-weight: 100;
 }
@@ -54,7 +54,7 @@
 }
 
 .getStartedContainerButton button{
-	width: 150px;
+	width: 140px;
 	height: 50px;
 	margin-right:  25px;
 	border: none;
@@ -79,17 +79,17 @@
 	}
 
 	.getStartedDescriptionHeader h1{
-		font-size: 1.3em;
+		font-size: 1em;
 		font-family: sans-serif;
 	}
 
 	.getStartedP p{
 		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-		font-size: 1em;
+		font-size: 0.9em;
 	}
 
 	.getStartedContainerButton button{
-		width: 130px;
+		width: 120px;
 		height: 50px;
 	}
 	
