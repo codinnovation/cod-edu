@@ -1,0 +1,171 @@
+.exploreContainer {
+	width: 100%;
+	height: 100%;
+  }
+  
+  .exploreContainerHeader {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 10%;
+  }
+  
+  .exploreContainerHeader h1 {
+	font-family: sans-serif;
+	margin-right: 10px;
+	text-transform: uppercase;
+	font-size: 1.4em;
+  }
+  
+  .exploreContainerHeader h1:nth-child(2) {
+	border-bottom: 2px solid #008374;
+  }
+  
+  .exploreContent {
+	width: 70%;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 50px;
+  }
+  
+  .courseContainer {
+	width: 100%;
+	height: auto;
+	margin-top: 15%;
+	background-color: #008374;
+	border-radius: 5px;
+	padding: 15px;
+	transition: 0.5s ease-in-out;
+  }
+  
+  .courseContainer:hover {
+	transform: scaleX(1.05);
+  }
+  
+  .courseContainer:nth-child(2) {
+	background-color: #ff3d1d;
+  }
+  
+  .courseHeader {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  .courseHeader h1 {
+	font-size: 1.3em;
+	text-align: center;
+	color: #fff;
+	font-family: sans-serif;
+  }
+  
+  .courseDescription {
+	width: 80%;
+	margin: 8% auto;
+  }
+  
+  .courseDescription p {
+	text-align: center;
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+	color: #f1f1f1;
+	font-size: 1em;
+  }
+  
+  .courseButton {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20%;
+  }
+  
+  .courseContainer:nth-child(2) .courseButton button {
+	background-color: #008374;
+	color: #fff;
+  }
+  .courseButton button {
+	width: 150px;
+	height: 50px;
+	background-color: #ff3d1d;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	font-size: 0.9em;
+	cursor: pointer;
+  }
+  
+  .exploreContainerButton {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 4%;
+  }
+  
+  .exploreContainerButton button {
+	width: 150px;
+	height: 60px;
+	background-color: #000;
+	color: #fff;
+	font-size: 1.05em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 5px;
+	cursor: pointer;
+  }
+  
+  .exploreContainerButton button:hover {
+	color: #ff3d1d;
+  }
+  
+  @media (max-width: 700px) {
+	.exploreContainerHeader {
+	  margin-top: 15%;
+	}
+	.exploreContainerHeader h1 {
+	  font-family: sans-serif;
+	  margin-right: 10px;
+	  font-size: 1em;
+	}
+  
+	.exploreContent {
+	  width: 90%;
+	  grid-template-columns: 1fr;
+	  gap: 0px;
+	}
+  
+	.courseContainer {
+	  margin-top: 9%;
+	}
+  
+	.courseHeader h1 {
+	  font-size: 1em;
+	}
+  
+	.courseDescription {
+	  width: 90%;
+	  margin: 8% auto;
+	}
+  
+	.courseDescription p {
+	  font-size: 0.9em;
+	}
+  
+	.courseButton {
+	  margin-top: 8%;
+	}
+	.courseButton button {
+	  width: 120px;
+	  font-size: 0.9em;
+	}
+	.exploreContainerButton {
+	  margin-top: 13%;
+	}
+	.exploreContainerButton button {
+	  width: 120px;
+	  height: 50px;
+	  font-size: 0.9em;
+	}
+  }
+  

@@ -6,10 +6,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Welcome To Cod E-Learning</title>
-        <meta name="description" content="Welcome To Cod E-Learning" />
+        <title>Welcome To Code Mentor</title>
+        <meta name="description" content="Welcome To Code Mentor" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/lg2.png" />
+        <link rel="icon" href="/logo-w-1-1.png" />
       </Head>
       <div>
         <Intro />

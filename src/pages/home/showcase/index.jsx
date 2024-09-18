@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import styles from "../../../styles/showcase.module.css";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
@@ -6,12 +6,68 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import LockOpenIcon from "@mui/icons-material/LockOpen";
-import HowToRegIcon from "@mui/icons-material/HowToReg";
+import Box from "@mui/material/Box";
+import CircularProgress from "@mui/material/CircularProgress";
+import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Showcase = () => {
+  const router = useRouter();
+  const [currentUser, setCurrentUser] = useState(null);
+  const [isLinkClicked, setIsLinkClicked] = useState(false);
+
+  console.log(currentUser);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const response = await fetch("/api/user");
+        if (response.ok) {
+          const userData = await response.json();
+          setCurrentUser(userData);
+        }
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    };
+
+    fetchUser();
+  }, []);
+
+  const handleLogout = async (e) => {
+    setIsLinkClicked(true);
+    try {
+      const response = await fetch("/api/logout", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+
+      if (response.ok) {
+        router.push("/login");
+        setIsLinkClicked(false);
+      } else {
+        console.log("Logout unsuccessful");
+        setIsLinkClicked(false);
+      }
+    } catch (error) {
+      console.log("error" + error);
+      setIsLinkClicked(false);
+    }
+  };
+
   return (
     <>
+      {isLinkClicked && (
+        <div className={styles.loadingContainer}>
+          <Box sx={{ display: "flex" }}>
+            <CircularProgress />
+          </Box>
+        </div>
+      )}
+
       <div className={styles.showcaseContainer}>
         <motion.div
           className={styles.showcaseBgImage}
@@ -50,15 +106,25 @@ const Showcase = () => {
               animate={{ x: 0 }}
               transition={{ duration: 2, ease: "easeOut" }}
             >
-              <div className={styles.item}>
-                <LockOpenIcon className={styles.icon} />
-                <h1>LogIn</h1>
-              </div>
-
-              <div className={styles.item}>
-                <HowToRegIcon className={styles.icon} />
-                <h1>Register</h1>
-              </div>
+              {currentUser ? (
+                <>
+                  <div className={styles.item} onClick={handleLogout}>
+                    <ExitToAppIcon className={styles.icon} />
+                    <h1>Logout</h1>
+                  </div>
+                  <div className={styles.item}>
+                    <img src={currentUser?.user?.photoURL} alt="User" />
+                  </div>
+                </>
+              ) : (
+                <div
+                  className={styles.item}
+                  onClick={() => router.push("/login")}
+                >
+                  <LockOpenIcon className={styles.icon} />
+                  <h1>Login</h1>
+                </div>
+              )}
             </motion.div>
           </div>
 
@@ -79,8 +145,8 @@ const Showcase = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1.5 }}
             >
-              <Link href="/">Home</Link>
-              <Link href="/">Courses</Link>
+              <Link href="/home">Home</Link>
+              <Link href="/courses">Courses</Link>
               <Link href="/">About</Link>
               <Link href="/">Services</Link>
               <Link href="/">Contact</Link>
@@ -95,7 +161,7 @@ const Showcase = () => {
           </div>
 
           <div className={styles.showcaseTextContainer}>
-            <div className={styles.showcaseText} >
+            <div className={styles.showcaseText}>
               <div className={styles.showcaseTextHeader}>
                 <h1>Where Innovation Meets</h1>
                 <h1>Education</h1>

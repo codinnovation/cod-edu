@@ -1,9 +1,10 @@
 import React from "react";
 import styles from '../../../styles/explore-our-learning.module.css';
 import { motion } from 'framer-motion';
+import { useRouter } from "next/router";
 
 function ExploreOurCourese() {
-	// Animation variant for scaling and fading
+	const router = useRouter()
 	const scaleUpVariant = {
 		hidden: { opacity: 0, scale: 0.8 },
 		visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
@@ -82,7 +83,7 @@ function ExploreOurCourese() {
 					</motion.div>
 				</div>
 				<div className={styles.exploreContainerButton}>
-					<button>See More</button>
+					<button onClick={() => router.push("/courses")}>See More</button>
 				</div>
 			</div>
 		</>
