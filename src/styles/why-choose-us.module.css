@@ -1,0 +1,99 @@
+.whyContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.whyHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7%;
+}
+
+.whyHeader h1 {
+  font-family: sans-serif;
+  margin-right: 10px;
+  text-transform: uppercase;
+  font-size: 1.7em;
+}
+
+.whyHeader h1:nth-child(2) {
+  border-bottom: 2px solid #ff3d1d;
+}
+
+.whyContent {
+  width: 70%;
+  margin: 10px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15%;
+}
+
+.content .contentIcon {
+  background-color: #e1c5c1;
+  border-radius: 50%;
+}
+
+.content .contentIcon .icon {
+  color: #fff;
+  font-size: 6em;
+  padding: 20px;
+}
+
+.contentHeader {
+  margin-top: 10px;
+}
+
+.contentHeader h1 {
+  font-size: 1.5em;
+  font-family: sans-serif;
+}
+
+.contentDescription {
+  margin-top: 5px;
+  width: 80%;
+}
+
+.contentDescription p {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1em;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .whyHeader h1 {
+    font-size: 1.05em;
+  }
+
+  .whyContent {
+    width: 90%;
+    margin: 10px auto;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .content {
+    margin-top: 9%;
+  }
+
+  .content .contentIcon .icon {
+    font-size: 4.5em;
+    padding: 15px;
+  }
+
+  .contentHeader h1 {
+    font-size: 1.1em;
+  }
+
+  .contentDescription p {
+    font-size: 0.9em;
+  }
+}

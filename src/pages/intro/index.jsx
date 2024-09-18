@@ -33,15 +33,14 @@ function Intro() {
 			const timeout = setTimeout(() => {
 				setDisplayedText((prev) => prev + texts[currentText][charIndex]);
 				setCharIndex((prev) => prev + 1);
-			}, 100); // Adjust speed of typing (100ms per character)
+			}, 100);
 			return () => clearTimeout(timeout);
 		} else {
-			// Once the entire text is typed, wait 3 seconds before showing the next text
 			const nextTextTimeout = setTimeout(() => {
 				setCurrentText((prev) => (prev + 1) % texts.length);
 				setDisplayedText("");
 				setCharIndex(0);
-			}, 3000); // 3-second delay before switching to the next text
+			}, 3000);
 			return () => clearTimeout(nextTextTimeout);
 		}
 	}, [charIndex, currentText]);
@@ -62,12 +61,12 @@ function Intro() {
 			/>
 			<div className={styles.bottomContainer}>
 				<motion.div
-					key={currentText} // Key helps with smooth transitions between texts
+					key={currentText}
 					className={styles.textDisplay}
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					exit={{ opacity: 0 }}
-					transition={{ duration: 3 }} // Smooth fade transition
+					transition={{ duration: 3 }}
 				>
 					{displayedText}
 				</motion.div>

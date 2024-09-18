@@ -1,15 +1,8 @@
 import Head from "next/head";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
-import styles from "@/styles/Home.module.css";
-import Showcase from "./home";
 import Intro from "./intro";
 
 export default function Home() {
-  const router = useRouter();
-  useEffect(() => {
-router
-  })
+
   return (
     <>
       <Head>
@@ -19,7 +12,7 @@ router
         <link rel="icon" href="/lg2.png" />
       </Head>
       <div>
-        <Intro/>
+        <Intro />
       </div>
     </>
   );

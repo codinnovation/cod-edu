@@ -1,0 +1,96 @@
+.getStartedContainer {
+	width: 100%;
+	height: 100%;
+}
+
+.getStartedContent{
+	width: 70%;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+	margin-top: 10%;
+}
+
+.getstartedImage{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.getstartedImage img{
+	width: 100%;
+	height: auto;
+}
+
+.getStartedDescription{
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: column;
+}
+
+.getStartedDescriptionHeader h1{
+	font-size: 1.5em;
+	font-family: sans-serif;
+}
+
+.getStartedP{
+	margin-top: 10px;
+}
+
+.getStartedP p{
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-size: 1.1em;
+	color: #000;
+	font-weight: 100;
+}
+
+.getStartedContainerButton{
+	margin-top: 10%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.getStartedContainerButton button{
+	width: 150px;
+	height: 50px;
+	margin-right:  25px;
+	border: none;
+	cursor: pointer;
+}
+
+.getStartedContainerButton button:nth-child(1){
+	color: #ff3d1d;
+	font-weight: 600;
+}
+
+.getStartedContainerButton button:nth-child(2){
+	color: #008374;
+	font-weight: 600;
+}
+
+@media (max-width: 700px) {
+	.getStartedContent{
+		width: 90%;
+		grid-template-columns: 1fr;
+		margin-top: 15%;
+	}
+
+	.getStartedDescriptionHeader h1{
+		font-size: 1.3em;
+		font-family: sans-serif;
+	}
+
+	.getStartedP p{
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		font-size: 1em;
+	}
+
+	.getStartedContainerButton button{
+		width: 130px;
+		height: 50px;
+	}
+	
+}
