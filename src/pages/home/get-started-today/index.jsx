@@ -1,18 +1,45 @@
-import React from "react"
+import React from "react";
 import styles from '../../../styles/get-started-today.module.css';
 import Image from "next/image";
-import ContainerImage from '../../../../public/login-image-removebg-preview.png'
+import ContainerImage from '../../../../public/login-image-removebg-preview.png';
+import { motion } from 'framer-motion';
 
 function GetStartedToday() {
+	// Animation variants
+	const slideInVariant = {
+		hidden: { opacity: 0, x: -100 },
+		visible: { opacity: 1, x: 0, transition: { duration: 0.7 } },
+	};
+
+	const fadeInVariant = {
+		hidden: { opacity: 0, y: 20 },
+		visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.3 } },
+	};
+
 	return (
 		<>
 			<div className={styles.getStartedContainer}>
 				<div className={styles.getStartedContent}>
-					<div className={styles.getstartedImage}>
-						<Image width={900} height={900} alt="image" src={ContainerImage} />
-					</div>
 
-					<div className={styles.getStartedDescription}>
+					{/* Image Motion */}
+					<motion.div
+						className={styles.getstartedImage}
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ infinity: true }}
+						variants={slideInVariant}
+					>
+						<Image width={900} height={900} alt="image" src={ContainerImage} />
+					</motion.div>
+
+					{/* Description Motion */}
+					<motion.div
+						className={styles.getStartedDescription}
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ infinity: true }}
+						variants={fadeInVariant}
+					>
 						<div className={styles.getStartedDescriptionHeader}>
 							<h1>Get Started Today!</h1>
 						</div>
@@ -24,13 +51,12 @@ function GetStartedToday() {
 						<div className={styles.getStartedContainerButton}>
 							<button>Sign Up</button>
 							<button>Sign In</button>
-
 						</div>
-					</div>
+					</motion.div>
 				</div>
 			</div>
 		</>
-	)
+	);
 }
 
-export default GetStartedToday
+export default GetStartedToday;

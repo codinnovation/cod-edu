@@ -1,7 +1,96 @@
-.footerContainer{
-	margin-top: 10%;
+.footerContainer {
+  margin-top: 5%;
 }
 
-.footerContent{
-	display: grid;
+.footerContent {
+  width: 70%;
+  margin: 3% auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.companyName {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.companyName h1 {
+  font-size: 1.65em;
+  color: #008374;
+  font-family: sans-serif;
+}
+
+.companyName h1:nth-child(2) {
+  color: #ff3d1d;
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.copyright p {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.socialMedia {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.socialMedia .icon {
+  margin-left: 30px;
+  font-size: 1.6em;
+  cursor: pointer;
+}
+
+.socialMedia .icon:nth-child(1) {
+  color: blue;
+}
+
+.socialMedia .icon:nth-child(2) {
+  color: green;
+}
+
+@media (max-width: 700px) {
+  .footerContainer {
+    margin-top: 15%;
+  }
+  .footerContent {
+    grid-template-columns: 1fr;
+    width: 90%;
+    gap: 10px;
+  }
+
+  .companyName {
+    justify-content: center;
+  }
+
+  .companyName h1 {
+    font-size: 1.2em;
+  }
+
+  .copyright p {
+    font-size: 0.9em;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .socialMedia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+  }
+
+  .socialMedia .icon {
+    margin-right: 30px;
+    font-size: 1.6em;
+    cursor: pointer;
+  }
 }
