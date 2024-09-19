@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import Head from "next/head";
+import styles from "../../styles/Home.module.css";
 import Showcase from "./showcase";
 import WhyChooseUs from "./why-choose-us";
+import MenuIcon from "@mui/icons-material/Menu";
 import ExploreOurCourese from "./explore-our-courses";
 import GetStartedToday from "./get-started-today";
 import JoinOurCommunity from "./join-our-community";
 import Footer from "./footer";
+import CloseIcon from "@mui/icons-material/Close";
+import Link from "next/link";
 
 function Index() {
+  const [openMenu, setOpenMenu] = useState(false);
+
   return (
     <>
       <Head>
@@ -24,6 +30,25 @@ function Index() {
         <JoinOurCommunity />
         <Footer />
       </div>
+
+      <div className={styles.menuContainer} onClick={() => setOpenMenu(true)}>
+        <MenuIcon className={styles.icon} />
+      </div>
+
+      {openMenu && (
+        <div className={styles.sideMenu}>
+          <div className={styles.closeIcon} onClick={() => setOpenMenu(false)}>
+            <CloseIcon />
+          </div>
+          <div className={styles.menuItems}>
+            <Link href="/">Home</Link>
+            <Link href="/">Courses</Link>
+            <Link href="/">About</Link>
+            <Link href="/">Services</Link>
+            <Link href="/">Contact</Link>
+          </div>
+        </div>
+      )}
     </>
   );
 }

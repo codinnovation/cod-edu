@@ -1,7 +1,6 @@
 import React from "react";
 import styles from '../../../styles/join-our-community.module.css';
 import Image from "next/image";
-import WhatsAppImage from '../../../../public/whatsapp.png';
 import { motion } from 'framer-motion';
 
 function JoinOurCommunity() {
