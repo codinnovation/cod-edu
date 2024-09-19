@@ -41,8 +41,8 @@ function Index() {
             <CloseIcon />
           </div>
           <div className={styles.menuItems}>
-            <Link href="/">Home</Link>
-            <Link href="/">Courses</Link>
+            <Link href="/home">Home</Link>
+            <Link href="/courses">Courses</Link>
             <Link href="/">About</Link>
             <Link href="/">Services</Link>
             <Link href="/">Contact</Link>

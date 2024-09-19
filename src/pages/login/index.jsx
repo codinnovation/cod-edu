@@ -14,28 +14,11 @@ function Index() {
   const router = useRouter();
   const [isLinkClicked, setIsLinkClicked] = useState(false);
 
-  function SiginWithEmailPage() {
-    setIsLinkClicked(true);
-    setTimeout(() => {
-      router.push("/login/email");
-      setIsLinkClicked(false);
-    }, 1500);
-  }
-
-  function createAccountPage() {
-    setIsLinkClicked(true);
-    setTimeout(() => {
-      router.push("/sign-up");
-      setIsLinkClicked(false);
-    }, 1500);
-  }
-
   const signUpWithGoogle = async () => {
     try {
       const result = await signInWithPopup(auth, googleProvider);
       const user = result.user;
 
-      // Send a request to the server to save the user session
       const response = await fetch("/api/set-session", {
         method: "POST",
         headers: {
@@ -72,12 +55,15 @@ function Index() {
       </Head>
       <div className={styles.loginContainer}>
         <div className={styles.loginContent}>
-          <div className={styles.closeIcon}>
+          <div
+            className={styles.closeIcon}
+            onClick={() => router.push("/home")}
+          >
             <CloseIcon className={styles.icon} />
           </div>
           <div className={styles.loginFormContent}>
             <div className={styles.loginHeader}>
-              <h1>Log in to COD DevReel</h1>
+              <h1>Log in To CodeMentor</h1>
             </div>
 
             <div className={styles.loginOptions}>
@@ -89,7 +75,7 @@ function Index() {
 
             <div className={styles.createAccount}>
               <p>Don&apos;t have account?</p>
-              <p>Sign up</p>
+              <p onClick={() => router.push("/sign-up")}>Sign up</p>
             </div>
           </div>
         </div>

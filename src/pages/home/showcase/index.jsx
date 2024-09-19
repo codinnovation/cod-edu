@@ -148,8 +148,10 @@ const Showcase = () => {
               <Link href="/home">Home</Link>
               <Link href="/courses">Courses</Link>
               <Link href="/">About</Link>
-              <Link href="/">Services</Link>
               <Link href="/">Contact</Link>
+              {currentUser?.user?.email === "ksakyiasumadu@gmail.com" && (
+                <Link href="/upload">Upload Course</Link>
+              )}
             </motion.div>
 
             <motion.div

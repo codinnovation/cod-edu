@@ -66,6 +66,19 @@
   font-size: 1.2em;
 }
 
+.menuContainer {
+  position: fixed;
+  bottom: 5%;
+  left: 8%;
+  z-index: 900;
+}
+
+.menuContainer .icon {
+  font-size: 2em;
+  color: #ff3d1d;
+  border-radius: 50%;
+}
+
 @media (max-width: 700px) {
   .learnContent {
     width: 90%;
@@ -103,8 +116,8 @@
   }
 
   .learnVideoDescription .description p {
-	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-	font-size: 1em;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    font-size: 1em;
   }
-  
 }
