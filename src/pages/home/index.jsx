@@ -10,6 +10,10 @@ import JoinOurCommunity from "./join-our-community";
 import Footer from "./footer";
 import CloseIcon from "@mui/icons-material/Close";
 import Link from "next/link";
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
+import InfoIcon from "@mui/icons-material/Info";
+import ContactSupportIcon from "@mui/icons-material/ContactSupport";
 
 function Index() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -41,11 +45,26 @@ function Index() {
             <CloseIcon />
           </div>
           <div className={styles.menuItems}>
-            <Link href="/home">Home</Link>
-            <Link href="/courses">Courses</Link>
-            <Link href="/">About</Link>
-            <Link href="/">Services</Link>
-            <Link href="/">Contact</Link>
+            <Link href="/home">
+              {" "}
+              <DashboardIcon className={styles.icon} />
+              Home
+            </Link>
+            <Link href="/courses">
+              {" "}
+              <LocalLibraryIcon className={styles.icon} />
+              Courses
+            </Link>
+            <Link href="/">
+              {" "}
+              <InfoIcon className={styles.icon} />
+              About
+            </Link>
+            <Link href="/">
+              {" "}
+              <ContactSupportIcon className={styles.icon} />
+              Contact
+            </Link>
           </div>
         </div>
       )}

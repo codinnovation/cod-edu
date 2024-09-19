@@ -6,7 +6,7 @@ export default function withSession(handler) {
     cookieName: "cod_e_learning",
 
     cookieOptions: {
-      maxAge: 1800,
+      maxAge: 10800,
       secure: process.env.NODE_ENV === "production" ? true : false,
       httpOnly: true,
     },

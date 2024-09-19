@@ -166,7 +166,7 @@
 }
 
 .showcaseTextHeader h1 {
-  font-size: 3.5em;
+  font-size: 2.6em;
   font-family: sans-serif;
   color: #fff;
 }
@@ -229,6 +229,31 @@
   z-index: 9999;
 }
 
+.modalContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 15px;
+  width: auto;
+  border-radius: 6px;
+  border: none;
+}
+
+.modalContainer img {
+  width: 25%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.modalContainer h1 {
+  font-size: 1.1em;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
 @media (max-width: 700px) {
   .showcaseContainer {
     width: 100%;
@@ -282,7 +307,7 @@
   }
 
   .showcaseTextHeader h1 {
-    font-size: 1.6em;
+    font-size: 1.4em;
     font-family: sans-serif;
     color: #fff;
   }
@@ -301,5 +326,12 @@
 
   .showcaseTextPlay {
     display: none;
+  }
+
+  .modalContainer {
+    width: 80%;
+  }
+  .modalContainer img {
+    width: 20%;
   }
 }

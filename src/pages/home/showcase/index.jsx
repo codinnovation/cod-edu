@@ -10,14 +10,30 @@ import Box from "@mui/material/Box";
 import CircularProgress from "@mui/material/CircularProgress";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import Link from "next/link";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
 import { useRouter } from "next/router";
 
 const Showcase = () => {
   const router = useRouter();
   const [currentUser, setCurrentUser] = useState(null);
   const [isLinkClicked, setIsLinkClicked] = useState(false);
+  const [showWelcomeModal, setShowWelcomeModal] = useState(false);
 
-  console.log(currentUser);
+  const handleOpenWelcomeModal = () => {
+    setShowWelcomeModal(true);
+  };
+
+  const handleCloseWelcomeModal = () => {
+    setShowWelcomeModal(false);
+  };
+
+  useEffect(() => {
+    if (currentUser?.user) {
+      handleOpenWelcomeModal();
+    }
+  }, [currentUser?.user]);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -158,15 +174,17 @@ const Showcase = () => {
               className={styles.navigationButton}
               whileHover={{ scale: 1.1 }}
             >
-              <button>Enroll Now</button>
+              <button onClick={() => router.push("/courses")}>
+                Enroll Now
+              </button>
             </motion.div>
           </div>
 
           <div className={styles.showcaseTextContainer}>
             <div className={styles.showcaseText}>
               <div className={styles.showcaseTextHeader}>
-                <h1>Where Innovation Meets</h1>
-                <h1>Education</h1>
+                <h1>Where Courage, Obedience, and Discipline Meet </h1>
+                <h1>Innovation</h1>
               </div>
 
               <div className={styles.showcaseTextDescription}>
@@ -178,7 +196,10 @@ const Showcase = () => {
               </div>
 
               <div className={styles.showcaseTextButton}>
-                <motion.button whileHover={{ scale: 1.1 }}>
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  onClick={() => router.push("/courses")}
+                >
                   Explore More
                 </motion.button>
               </div>
@@ -190,6 +211,19 @@ const Showcase = () => {
           </div>
         </div>
       </div>
+
+      <Modal
+        open={showWelcomeModal}
+        onClose={handleCloseWelcomeModal}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box className={styles.modalContainer}>
+          <img src={currentUser?.user?.photoURL} alt="User" />
+          <h1>{`You are welcome ${currentUser?.user?.displayName}`}</h1>
+          <Button onClick={handleCloseWelcomeModal}>Close</Button>
+        </Box>
+      </Modal>
     </>
   );
 };

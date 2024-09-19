@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Intro from "./intro";
+import { useState, useEffect } from "react";
 
 export default function Home() {
 
@@ -14,6 +15,7 @@ export default function Home() {
       <div>
         <Intro />
       </div>
+   
     </>
   );
 }
